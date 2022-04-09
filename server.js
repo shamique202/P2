@@ -55,10 +55,8 @@ app.use('/', likesRouter);
 app.use('/abouts', aboutsRouter);
 
 // catch the 404 and forward the error
-// invalid request, send 404 page
 app.use(function (req, res, next) {
-  //set locals and give an error in the development
-  res.status(404).send('Cant find that!');
+  next(createError(404));
 });
 
 // error handler

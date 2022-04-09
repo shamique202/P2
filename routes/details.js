@@ -9,4 +9,4 @@ router.get('/:id', loggedIn, detailsCtrl.show);
 router.post('/', loggedIn, detailsCtrl.create);
 router.delete('/:id', loggedIn, detailsCtrl.delete);
 
-module.exports = router;
+module.exports = router; 
