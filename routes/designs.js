@@ -6,3 +6,7 @@ const loggedIn = require('../config/auth');
 router.get('/details/:id/designs/new', loggedIn, designsCtrl.new);
 router.get('/designs/:id', loggedIn, designsCtrl.show);
 router.post('/details/:id/designs', designsCtrl.create);
+router.delete('/designs/:id', loggedIn, designsCtrl.delete);
+
+
+module.exports = router;
