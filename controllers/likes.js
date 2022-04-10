@@ -13,9 +13,10 @@ function edit(req, res) {
     });
 };
 
+
 function create(req, res) {
     Designs.findById(req.params.id, function (err, design) {
-        // add user's info 
+        // add the user's info 
         req.body.user = req.user._id;
         req.body.userName = req.user.name;
 
@@ -25,6 +26,20 @@ function create(req, res) {
         });
     });
 };
+
+function deleteLikes(req, res) {
+    Designs.findOne({ 'likes._id': req.params.id }, function (err, design) {
+        const like = design.likes.id(req.params.id);
+        if (!like.user.equals(req.user._id)) return res.redirect(`/designs/${design._id}`);
+        like.remove();
+        design.save(function (err) {
+            res.redirect(`/designs/${design._id}`);
+        });
+    });
+};
+
+
+
 
 
 
