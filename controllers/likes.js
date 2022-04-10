@@ -38,6 +38,19 @@ function deleteLikes(req, res) {
     });
 };
 
+function update(req, res) {
+    console.log(req.body)
+    Designs.findOne({ 'likes._id': req.params.id }, function (err, design) {
+        const like = design.likes.id(req.params.id);
+        console.log(like);
+        if (!like.user.equals(req.user._id)) return res.redirect(`/designs/${design._id}`);
+        like.comment = req.body.comment;
+        design.save(function (err) {
+            res.redirect(`/designs/${design._id}`)
+        })
+    })
+}
+
 
 
 
