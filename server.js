@@ -71,3 +71,6 @@ app.use(function (err, req, res, next) {
 });
 
 module.exports = app;
+
+// perform npm i .env
+// npm install 
