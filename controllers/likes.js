@@ -9,7 +9,7 @@ module.exports = {
 
 function edit(req, res) {
     Designs.findOne({ 'likes._id': req.params.id }, function (err, design) {
-        res.render('likes/edit', { title: 'Edit comment here', design, like: req.params.id });
+        res.render('likes/edit', { title: 'Edit your comment here', design, like: req.params.id });
     });
 };
 
