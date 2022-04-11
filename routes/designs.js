@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const designsCtrl = require('../controllers/designs');
-const loggedIn = require('../config/auth');
+const isLoggedIn = require('../config/auth');
 
-router.get('/details/:id/designs/new', loggedIn, designsCtrl.new);
-router.get('/designs/:id', loggedIn, designsCtrl.show);
-router.post('/details/:id/designs', designsCtrl.create);
-router.delete('/designs/:id', loggedIn, designsCtrl.delete);
+router.get('/details/:id/designs/new', isLoggedIn, designsCtrl.new);
+router.get('/designs/:id', isLoggedIn, designsCtrl.show);
+router.post('/details/:id/designs', isLoggedIn, designsCtrl.create);
+router.delete('/designs/:id', isLoggedIn, designsCtrl.delete);
 
 
 module.exports = router;
