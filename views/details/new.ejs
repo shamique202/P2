@@ -1,0 +1,56 @@
+<%- include('../partials/header') %>
+    <div class="section">
+        <div class="col s12">
+            <h1>
+                <%= title %>
+            </h1>
+            <div>
+                <form action="/details" method="POST">
+                    <div class="row">
+                        <p id="detail-select">
+                            <label>
+                                <input name="name" type="radio" value="All Black" />
+                                <span>All Black</span>
+                            </label>
+                            <label>
+                                <input name="name" type="radio" value="Decluttered" />
+                                <span>Decluttered</span>
+                            </label>
+                            <label>
+                                <input name="name" type="radio" value="Glam" />
+                                <span>Glam</span>
+                            </label>
+                            <label>
+                                <input name="name" type="radio" value="Japandi" />
+                                <span>Japandi</span>
+                            </label>
+                            <label>
+                                <input name="name" type="radio" value="Light & Airy" />
+                                <span>Light & Airy</span>
+                            </label>
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input placeholder="Enter Image-URL" id="image-url" type="text" class="validate"
+                                name="imageUrl">
+                            <label for="image-url">Image-url</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input placeholder="Enter Matrerial icon name" id="icon" type="text" class="validate"
+                                name="icornName">
+                            <label for="icon">Icon Name</label>
+                        </div>
+                    </div>
+                    <button class="btn waves-effect waves-light add-btn" type="submit" name="action">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <%- include('../partials/footer') %>

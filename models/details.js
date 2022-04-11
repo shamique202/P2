@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const detailSchema = new Schema({
     name: {
         type: String,
-        enum: ['All Black', 'Decluttered', 'Glam', 'Japanese', 'Light & Airy'],
+        enum: ['All Black', 'Decluttered', 'Glam', 'Japandi', 'Light & Airy'],
     },
     imageUrl: {
         type: String,
