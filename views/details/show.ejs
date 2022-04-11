@@ -1,0 +1,87 @@
+<%- include('../partials/header') %>
+    <span>
+        <h1>
+            <%= title %>
+                <% if(user.admin) { %>
+                    <a class="add white-text" href="/details/<%= detail._id %>/designs/new">
+                        <button class="btn waves-effect black add-btn white-text">
+                            Add design<i class="material-icons right white-text">local_office</i>
+                        </button>
+                    </a>
+                    <% } %>
+        </h1>
+    </span>
+
+    <div>
+        <% if (design.length) { %>
+            <% design.forEach(function(r) { %>
+                <header>
+                    <p class="design-title">
+                        <%= r.title %>
+                    </p>
+                </header>
+                <div class="row">
+                    <div class="col s12 ">
+                        <a href="/designs/<%= r.id %>">
+                            <div class="card-image">
+                                <img class="design-image" src="<%= r.designImageUrl %>" alt="design-image">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="design-content">
+                        <p>
+                            <%= r.note %>
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <footer class="design-footer">
+                    <div class="footer-icon">
+                        <% if(user.admin) { %>
+                            <form action="/designs/<%= r._id %>?_method=DELETE" class="delte-form" method="POST">
+                                <button type="submit" class="waves-effect black btn-small delete-btn">
+                                    <i class="small material-icons white-text">delete_outline</i>
+                                </button>
+                            </form>
+                            <% } %>
+                                <span>
+                                    <i class="tiny material-icons">date_range</i>
+                                    <time>
+                                        <%= r.createdAt.toLocaleDateString() %>
+                                    </time>
+                                </span>
+                    </div>
+                    <div>
+                        <span>
+                            <i class="tiny material-icons">
+                                <%= detail.icornName %>
+                            </i>
+                            <%= detail.name %>
+                        </span>
+                    </div>
+                    <button class="waves-effect black btn-small delete-btn back-btn">
+                        <a class="white-text" href="/details"><i
+                                class="tiny material-icons white-text">arrow_back</i></a>
+                    </button>
+                </footer>
+                <% }); %>
+                    <% } else { %>
+                        <div class="row">
+                            <div clas="col s12">
+                                <div class="card-image">
+                                    <img class="design-image"
+                                        src="https://images.unsplash.com/photo-1563261883-25b59aad64d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80"
+                                        alt="design-image">
+                                </div>
+                                <h6 class="like-comment">Sorry No Post Yet</h6>
+                            </div>
+                        </div>
+                        <button class="waves-effect black btn-small delete-btn back-btn">
+                            <a class="white-text" href="/details"><i
+                                    class="tiny material-icons white-text">arrow_back</i></a>
+                        </button>
+                        <% } %>
+    </div>
+
+
+    <%- include('../partials/footer') %>
