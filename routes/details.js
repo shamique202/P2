@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const detailsCtrl = require('../controllers/details')
-const loggedIn = require('../config/auth');
+const isLoggedIn = require('../config/auth');
 
-router.get('/', loggedIn, detailsCtrl.index);
-router.get('/new', loggedIn, detailsCtrl.new);
-router.get('/:id', loggedIn, detailsCtrl.show);
-router.post('/', loggedIn, detailsCtrl.create);
-router.delete('/:id', loggedIn, detailsCtrl.delete);
+router.get('/', isLoggedIn, detailsCtrl.index);
+router.get('/new', isLoggedIn, detailsCtrl.new);
+router.get('/:id', isLoggedIn, detailsCtrl.show);
+router.post('/', isLoggedIn, detailsCtrl.create);
+router.delete('/:id', isLoggedIn, detailsCtrl.delete);
 
 module.exports = router; 
