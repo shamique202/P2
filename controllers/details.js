@@ -21,7 +21,7 @@ function newDetail(req, res) {
 function show(req, res) {
     Details.findById(req.params.id, function (err, detail) {
         Designs.find({ detail: req.params.id }, function (err, design) {
-            res.render('cuisines/show', { title: 'Recipes', cuisine, recipe });
+            res.render('details/show', { title: 'Designs', detail, design });
         });
     });
 };
