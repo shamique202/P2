@@ -13,12 +13,11 @@ require('./config/database');
 // configure Passport
 require('./config/passport');
 
-
-
 // session middleware
 const session = require('express-session');
 const passport = require('passport');
 const methodOverride = require('method-override');
+
 // routes
 const indexRoutes = require('./routes/index');
 const designsRouter = require('./routes/designs');
@@ -34,9 +33,10 @@ app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(logger('dev'));
 app.use(express.json());
-// * 
+
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+
 // mount the session middleware
 app.use(session({
   secret: process.env.SECRET,
