@@ -3,20 +3,28 @@ const express = require('express');
 const path = require('path');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
-// session middleware
-const session = require('express-session');
-const passport = require('passport');
-const methodOverride = require('method-override');
-const indexRoutes = require('./routes/index');
+
 // load the env consts
 require('dotenv').config();
-
 // create the Express app
 const app = express();
 // connect to the MongoDB with mongoose
 require('./config/database');
 // configure Passport
 require('./config/passport');
+
+
+
+// session middleware
+const session = require('express-session');
+const passport = require('passport');
+const methodOverride = require('method-override');
+// routes
+const indexRoutes = require('./routes/index');
+const designsRouter = require('./routes/designs');
+const detailsRouter = require('./routes/details')
+const likesRouter = require('./routes/likes')
+const aboutsRouter = require('./routes/abouts')
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
