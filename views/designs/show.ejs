@@ -1,0 +1,152 @@
+<%- include('../partials/header') %>
+
+    <div class="design-detali">
+        <header>
+            <p class="design-title">
+                <%= design.title %>
+            </p>
+        </header>
+        <div class="row">
+            <div class="col s12 ">
+                <div class="card-image">
+                    <img class="design-image" src="<%= design.designImageUrl %>" alt="design-image">
+                </div>
+            </div>
+            <div class="design-content">
+                <p>
+                    <%= design.note %>
+                </p>
+                <h3>Artist's Information</h3>
+                <ul>
+                    <% design.artists.forEach(function(i) { %>
+                        <li>• <%= i %>
+                        </li>
+                        <% }) %>
+                </ul>
+                <h3>Design Information</h3>
+                <% design.informations.forEach(function(d) { %>
+                    <p class="informations-content">
+                        <%= d %>
+                    </p>
+                    <% }) %>
+            </div>
+        </div>
+        <hr>
+        <footer class="design-footer">
+            <div class="footer-icon">
+                <span>
+                    <i class="tiny material-icons">date_range</i>
+                    <time>
+                        <%= design.createdAt.toLocaleDateString() %>
+                    </time>
+                </span>
+            </div>
+            <div>
+                <span>
+                    <i class="tiny material-icons">
+                        <%= detail.icornName %>
+                    </i>
+                    <%= detail.name %>
+                </span>
+            </div>
+        </footer>
+    </div>
+
+    <a class="white-text" href="/details/<%= detail_id %>">
+        <button class="waves-effect black btn-small delete-btn back-btn">
+            <i class="tiny material-icons white-text">arrow_back</i>
+        </button>
+    </a>
+
+    <form class="like-box" action="/designs/<%= design._id %>/likes" method="POST">
+        <div class="row">
+            <fieldset class="rating col s2">
+                <input type="radio" id="mood-rating1" name="like" value="5" />
+                <label class="full" for="mood-rating1"><i class="small material-icons">mood</i></label>
+                <input type="radio" id="mood-rating2" name="like" value="4" />
+                <label class="full" for="mood-rating2"><i class="small material-icons">mood</i></label>
+                <input type="radio" id="mood-rating3" name="like" value="3" />
+                <label class="full" for="mood-rating3"><i class="small material-icons">mood</i></label>
+                <input type="radio" id="mood-rating4" name="like" value="2" />
+                <label class="full" for="mood-rating4"><i class="small material-icons">mood</i></label>
+                <input type="radio" id="mood-rating5" name="like" value="1" />
+                <label class="full" for="mood-rating5"><i class="small material-icons">mood</i></label>
+            </fieldset>
+            <div class="comment-input input-field col s10">
+                <input placeholder="Enter Your Comment" id="comment-box" type="text" class="validate" name="comment">
+                <label for="comment-box">Comment</label>
+            </div>
+        </div>
+
+        <button class="btn waves-effect black add-btn white-text" type="submit" name="action">Submit
+            <i class="material-icons right white-text">local_office</i>
+        </button>
+    </form>
+
+    <div class="comment-box">
+        <% if (design.likes.length) { %>
+            <% design.likes.forEach(function(r) { %>
+                <div class="row comment-head">
+                    <div class="col s12">
+                        <span class="like-user">
+                            <%= r.userName %>
+                        </span>
+                        <span class="like-date">
+                            <%= r.createdAt.toLocaleDateString() %>
+                        </span>
+                    </div>
+                </div>
+                <div class="row comment-body">
+                    <div class="col s12">
+                        <% if(r.like===5) { %>
+                            <span><i class="small material-icons like-rating">mood mood mood mood mood</i></span>
+                            <% } %>
+                                <% if(r.like===4) { %>
+                                    <span><i class="small material-icons like-rating">mood mood mood mood</i></span>
+                                    <% } %>
+                                        <% if(r.like===3) { %>
+                                            <span><i class="small material-icons like-rating">mood mood mood</i></span>
+                                            <% } %>
+                                                <% if(r.like===2) { %>
+                                                    <span><i class="small material-icons like-rating">mood
+                                                            mood</i></span>
+                                                    <% } %>
+                                                        <% if(r.like===1) { %>
+                                                            <span><i
+                                                                    class="small material-icons like-rating">mood</i></span>
+                                                            <% } %>
+                                                                <p class="like-comment">
+                                                                    <%= r.comment %>
+                                                                </p>
+                                                                <span class="like-delete delete-btn">
+                                                                    <% if (user && user._id.equals(r.user)) {%>
+                                                                        <form
+                                                                            action="/likes/<%= r._id %>?_method=DELETE"
+                                                                            method="POST">
+                                                                            <button class="btn waves-effect black"
+                                                                                type="submit"><i
+                                                                                    class="small material-icons white-text">delete_outline</i></button>
+                                                                        </form>
+                                                                </span>
+                                                                <a href="/likes/<%= r.id %>/edit">
+                                                                    <button class="btn waves-effect black edit-btn"
+                                                                        type="submit"><i
+                                                                            class="small material-icons white-text">create</i></button>
+                                                                </a>
+                                                                <hr class="like-hr">
+                    </div>
+                </div>
+                <% } %>
+                    </span>
+                    <% }); %>
+                        <% } else { %>
+                            <div class="row">
+                                <div clas="col s12">
+                                    <p class="like-comment">No Comment Made Yet</p>
+                                </div>
+                            </div>
+                            <% } %>
+    </div>
+
+
+    <%- include('../partials/footer') %>
