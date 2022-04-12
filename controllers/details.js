@@ -1,5 +1,5 @@
 const Details = require('../models/details');
-const Designs = require('../models/design');
+const Designs = require('../models/designs');
 
 module.exports = {
 
@@ -7,7 +7,7 @@ module.exports = {
     new: newDetail,
     show,
     create,
-    delete: deleteDetails,
+    delete: deleteDetail,
 };
 function index(req, res) {
     Details.find({}, function (err, details) {

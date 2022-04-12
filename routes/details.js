@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const detailsCtrl = require('../controllers/details')
+const detailsCtrl = require('../controllers/details');
 const isLoggedIn = require('../config/auth');
 
 router.get('/', isLoggedIn, detailsCtrl.index);

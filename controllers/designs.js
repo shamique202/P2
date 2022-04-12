@@ -1,4 +1,4 @@
-const designs = require('../models/design');
+const designs = require('../models/designs');
 const details = require('../models/details');
 
 module.exports = {

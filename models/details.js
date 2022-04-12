@@ -1,4 +1,4 @@
-const mongoose = ('mongoose');
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const detailSchema = new Schema({
@@ -14,8 +14,8 @@ const detailSchema = new Schema({
     },
     user: {
         type: Schema.Types.ObjectId,
-        ref: 'User',
-    },
+        ref: 'User'
+    }
 });
 
 module.exports = mongoose.model('Detail', detailSchema);
