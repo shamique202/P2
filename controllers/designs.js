@@ -1,5 +1,5 @@
-const designs = require('../models/designs');
-const details = require('../models/details');
+const Designs = require('../models/design');
+const Details = require('../models/details');
 
 module.exports = {
     new: newDesign,

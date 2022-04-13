@@ -1,5 +1,5 @@
 const Details = require('../models/details');
-const Designs = require('../models/designs');
+const Designs = require('../models/design');
 
 module.exports = {
 
@@ -28,8 +28,6 @@ function show(req, res) {
 
 function create(req, res) {
     req.body.user = req.user._id
-
-    // 
     let details = new Details(req.body);
     details.save(function (err) {
         if (err) return res.render('details/new');
@@ -42,3 +40,4 @@ function deleteDetail(req, res) {
         res.redirect('/details');
     });
 };
+

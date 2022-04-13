@@ -3,7 +3,7 @@
     <span>
         <h1>
             <%= title %>
-                <% if(user.admin) { %>
+                <% if(user) { %>
                     <a class="add white-text" href="/details/new">
                         <button type="submit" class="waves-light black btn-small add-btn">
                             Add your details<i class="material-icons right white-text">local_office</i>
@@ -31,7 +31,7 @@
                                         <p class="detail-title">
                                             <%= c.name %>
                                         </p>
-                                        <% if(user.admin) { %>
+                                        <% if(user) { %>
                                             <form action="/details/<%= c._id %>?_method=DELETE" class="delte-form"
                                                 method="POST">
                                                 <button type="submit" class="waves-effect black btn-small delete-btn"><i

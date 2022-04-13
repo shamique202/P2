@@ -60,7 +60,7 @@ app.use('/', indexRoutes);
 app.use('/details', detailsRouter);
 app.use('/', designsRouter);
 app.use('/', likesRouter);
-app.use('/abouts', aboutsRouter);
+app.use('/', aboutsRouter);
 
 // catch the 404 and forward the error
 app.use(function (req, res, next) {
@@ -80,5 +80,3 @@ app.use(function (err, req, res, next) {
 
 module.exports = app;
 
-// perform npm i .env
-// npm install 

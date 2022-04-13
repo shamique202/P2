@@ -1,20 +1,261 @@
-.brand-logo {
-  margin-left: 15px;
+body {
+  font: 14px;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  min-height: 95vh;
+  flex-direction: column;
 }
 
-.card .card-content .card-title {
-  margin-bottom: 10px;
+main {
+  flex: 1 0 auto;
 }
 
-#search-row form {
-  padding-top: 20px;
+nav {
+  box-shadow: 0 0 0 0;
 }
 
-.student-name {
+nav ul a:hover {
+  background-color: white !important;
+  color: gray !important;
+}
+
+footer {
+  text-align: center;
+}
+
+.footer-hr {
+  border: 0;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.section {
+  margin-bottom: 49px;
+}
+
+a {
+  color: #00b7ff;
+  width: 100%;
+}
+
+.detail-image {
+  max-height: 249px;
+  min-height: 85px;
+  width: auto;
+}
+
+.login img {
+  height: 30px;
+  margin-top: 4px;
+  margin-right: 4px;
+  padding-top: 12px;
+}
+
+.detail-title {
+  float: left;
+  font-weight: 600;
+}
+
+.add-btn {
+  float: right;
+}
+
+.delete-btn {
+  float: right;
+}
+
+/*detail new page*/
+#detail-select {
+  margin-left: 0.5px;
+}
+
+/* show page */
+
+.content-box {
+  margin-bottom: 0;
+}
+
+.design-image {
+  height: 69vmin;
+  width: 100%;
   position: relative;
-  top: -5px;
+  margin-bottom: 15px;
 }
 
-.collection-item form {
-  margin-top: -5px;
+.add {
+  text-decoration: none;
+  color: white;
+}
+
+.design-content {
+  margin: 0 16px;
+  text-align: left;
+}
+
+.design-content>p {
+  margin-bottom: 0;
+  text-align: left;
+  font-size: 16px;
+}
+
+.design-content>h3 {
+  font-size: 25px;
+}
+
+.footer-icon {
+  margin-bottom: 5px;
+}
+
+.design-title {
+  text-align: center;
+  font-size: 30px;
+}
+
+.design-footer {
+  text-align: left;
+}
+
+.back-btn {
+  float: left;
+  margin-top: 2.5em;
+}
+
+/* my designs show page*/
+.design-detali {
+  margin-top: 7em;
+}
+
+ul>li {
+  margin: 12px;
+  padding-left: 20px;
+}
+
+.informations-content {
+  margin: 5px 5px;
+  padding: 4.5px;
+}
+
+fieldset,
+label {
+  margin: 0;
+  padding: 0;
+}
+
+/*rating function*/
+.rating {
+  border: none;
+  float: left;
+  margin-top: 21px;
+  margin-left: 9px;
+}
+
+.rating>input {
+  display: none;
+}
+
+.rating>label:before {
+  font-size: 1.26em;
+  font-family: FontAwesome;
+  display: inline-block;
+}
+
+.rating>label {
+  color: #c4c4c4;
+  float: right;
+}
+
+.rating>input:checked~label,
+/* show a gold star when anyone taps it */
+.rating:not(:checked)>label:hover,
+/* hovers over current star */
+.rating:not(:checked)>label:hover~label {
+  color: black;
+}
+
+/* hovers over any stars in the list */
+
+.rating>input:checked+label:hover,
+/* hovers over current star whenever the ratings changes */
+.rating>input:checked~label:hover,
+.rating>label:hover~input:checked~label,
+/* highlights current selection */
+.rating>input:checked~label:hover~label {
+  color: black;
+}
+
+/*end rating function*/
+
+.comment-input {
+  float: right !important;
+}
+
+.like-box {
+  margin-top: 9em;
+}
+
+.comment-box {
+  margin-top: 15em;
+  margin-bottom: 4em;
+}
+
+.comment-head {
+  margin-top: 8em;
+}
+
+.comment-body {
+  margin-top: 4em;
+}
+
+.like-user {
+  font-size: 1.5em;
+  margin-right: 2em;
+}
+
+.like-comment {
+  display: inline;
+  margin-left: 2em;
+}
+
+.like-rating {
+  letter-spacing: -3px;
+}
+
+.like-hr {
+  margin-top: 2em;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.edit-btn {
+  float: right;
+  margin-right: 1.5em;
+}
+
+.edit-input {
+  margin-top: 5em;
+}
+
+.aboutme-image {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin: 3em;
+}
+
+.logo-img {
+  width: 71px;
+  margin-top: 0.5em;
+  margin-left: 4em;
+}
+
+.index-img {
+  width: 57%;
+  float: left;
+}
+
+.index-content {
+  margin-top: 3.5em;
+  text-align: center;
 }

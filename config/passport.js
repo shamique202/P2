@@ -39,8 +39,8 @@ passport.deserializeUser(function (id, done) {
   // finding the user, then calling cb
   // When you call this done function passport assigns the user document to req.user, which will 
   // be availible in every Single controller function, so you always know the logged in user
-  User.findById(userId).then(function (user) {
-    cb(null, user);
+  User.findById(id).then(function (user) {
+    done(null, user);
   });
 });
 

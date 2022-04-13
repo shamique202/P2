@@ -13,7 +13,7 @@ const userSchema = new Schema({
     avatar: String,
     admin: {
         type: Boolean,
-        default: false,
+        default: true,
         required: true
     },
 }, {
