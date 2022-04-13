@@ -2,7 +2,7 @@
     <span>
         <h1>
             <%= title %>
-                <% if(user.admin) { %>
+                <% if(user) { %>
                     <a class="add white-text" href="/details/<%= detail._id %>/designs/new">
                         <button class="btn waves-effect black add-btn white-text">
                             Add design<i class="material-icons right white-text">local_office</i>
@@ -37,7 +37,7 @@
                 <hr>
                 <footer class="design-footer">
                     <div class="footer-icon">
-                        <% if(user.admin) { %>
+                        <% if(user) { %>
                             <form action="/designs/<%= r._id %>?_method=DELETE" class="delte-form" method="POST">
                                 <button type="submit" class="waves-effect black btn-small delete-btn">
                                     <i class="small material-icons white-text">delete_outline</i>
