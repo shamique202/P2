@@ -243,12 +243,14 @@ label {
   margin-top: 5em;
 }
 
-.aboutme-image {
-  width: 95%;
-  margin-left: auto;
-  margin-right: auto;
+.abouts-image {
+  float: left;
+  width: 600px;
+  height: 650px;
+  float: left;
+  margin-left: 0px;
   display: block;
-  margin: 3em;
+  margin: 3.5em;
 }
 
 .logo-img {
@@ -258,7 +260,7 @@ label {
 }
 
 .index-img {
-  width: 57%;
+  width: 45%;
   float: left;
 }
 
