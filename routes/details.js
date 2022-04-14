@@ -11,6 +11,7 @@ router.delete('/:id', isLoggedIn, detailsCtrl.delete);
 router.get('/:id/edit', isLoggedIn, detailsCtrl.edit);
 router.put('/:id', isLoggedIn, detailsCtrl.update);
 router.post('/:id/designs', isLoggedIn, detailsCtrl.post);
+router.put('/edit/:id', isLoggedIn, detailsCtrl.update);
 
 
 

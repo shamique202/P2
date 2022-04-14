@@ -55,13 +55,14 @@ function edit(req, res) {
 }
 
 function update(req, res) {
-    Designs.findByIdAndUpdate(
+    Details.findByIdAndUpdate(
         { _id: req.params.id, userRecommending: req.user._id },
         req.body,
         { new: true },
         function (err, detail) {
-            if (err || !detail) return res.redirect('/designs');
-            res.redirect(`/designs/${req.params.id}`);
+            console.log(err)
+            if (err || !detail) return res.redirect(`/details/${req.params.id}/edit`);
+            res.redirect(`/details`);
         }
     );
 }
