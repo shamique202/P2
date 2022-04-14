@@ -8,6 +8,9 @@ module.exports = {
     show,
     create,
     delete: deleteDetail,
+    edit,
+    update,
+    post,
 };
 function index(req, res) {
     Details.find({}, function (err, details) {
@@ -27,12 +30,15 @@ function show(req, res) {
 };
 
 function create(req, res) {
-    req.body.user = req.user._id
-    let details = new Details(req.body);
-    details.save(function (err) {
-        if (err) return res.render('details/new');
-        res.redirect('/details');
+    Details.create(req.body, function (err, details) {
+        if (err) return res.render(`details/${details_.id}`, { details, title: " Create" });
+        res.redirect('details/new');
     })
+    // req.body.user = req.user._id
+    // let details = new Details(req.body);
+    // details.save(function (err) {
+    //     if (err) return res.render('details');
+    //     res.redirect('/details');
 };
 
 function deleteDetail(req, res) {
@@ -41,3 +47,22 @@ function deleteDetail(req, res) {
     });
 };
 
+function edit(req, res) {
+    Details.findOne({ _id: req.params.id }, function (err, detail) {
+        if (err) return res.redirect('/details');
+        res.render('details/edit', { detail, title: detail.name });
+    });
+}
+
+function update(req, res) {
+    Designs.findByIdAndUpdate(
+        { _id: req.params.id, userRecommending: req.user._id },
+        req.body,
+        { new: true },
+        function (err, detail) {
+            if (err || !detail) return res.redirect('/designs');
+            res.redirect(`/designs/${req.params.id}`);
+        }
+    );
+}
+function post() { }

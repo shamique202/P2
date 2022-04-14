@@ -10,6 +10,10 @@ main {
   flex: 1 0 auto;
 }
 
+.text {
+  color: black;
+}
+
 nav {
   box-shadow: 0 0 0 0;
 }

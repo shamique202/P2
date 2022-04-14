@@ -15,14 +15,14 @@ function edit(req, res) {
 
 
 function create(req, res) {
-    Designs.findById(req.params.id, function (err, design) {
+    Designs.findById(req.params.id, function (err, details) {
         // add the user's info 
         req.body.user = req.user._id;
         req.body.userName = req.user.name;
 
         design.likes.push(req.body);
         design.save(function (err) {
-            res.redirect(`/designs/${design._id}`);
+            res.redirect(`/details/${detail._id}`);
         });
     });
 };

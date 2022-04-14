@@ -1,0 +1,56 @@
+<%- include('../partials/header') %>
+
+
+    <!-- <form action="/details/edit/<%= detail._id %>?_method=PUT" method="POST">
+        <input type="text" value="<% detail.content %>" name="content">
+        <input type="submit" value="edit">
+    </form> -->
+    <form action="/details/edit/<%= detail._id %>?_method=PUT" method="POST">
+        <div class="row">
+            <p id="detail-select">
+                <label>
+                    <input name="name" type="radio" value="All Black" <%=detail.name==="All Black" ? "checked" : "" %>
+                    />
+                    <span>All Black</span>
+                </label>
+                <label>
+                    <input name="name" type="radio" value="Decluttered" <%=detail.name==="Decluttered" ? "checked" : ""
+                        %>
+                    />
+                    <span>Decluttered</span>
+                </label>
+                <label>
+                    <input name="name" type="radio" value="Glam" <%=detail.name==="Glam" ? "checked" : "" %> />
+                    <span>Glam</span>
+                </label>
+                <label>
+                    <input name="name" type="radio" value="Japandi" <%=detail.name==="Japandi" ? "checked" : "" %> />
+                    <span>Japandi</span>
+                </label>
+                <label>
+                    <input name="name" type="radio" value="Light & Airy" <%=detail.name==="Light & Airy" ? "checked"
+                        : "" %> />
+                    <span>Light & Airy</span>
+                </label>
+            </p>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input placeholder="Enter Image-URL" id="image-url" type="text" class="validate" name="imageUrl"
+                    value="<%= detail.imageUrl %>">
+                <label for="image-url">Image-url</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input placeholder="Enter Matrerial icon name" id="icon" type="text" class="validate" name="iconName"
+                    value="<%= detail.iconName %>">
+                <label for="icon">Icon Name</label>
+            </div>
+        </div>
+        <button class="btn waves-effect waves-light add-btn" type="submit" name="action">Save
+            <i class="material-icons right">send</i>
+        </button>
+    </form>
+
+    <%- include('../partials/footer') %>

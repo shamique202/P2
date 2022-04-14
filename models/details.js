@@ -6,10 +6,11 @@ const detailSchema = new Schema({
         type: String,
         enum: ['All Black', 'Decluttered', 'Glam', 'Japandi', 'Light & Airy'],
     },
+
     imageUrl: {
         type: String,
     },
-    icornName: {
+    iconName: {
         type: String,
     },
     user: {

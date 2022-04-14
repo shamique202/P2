@@ -19,25 +19,43 @@
             <div class="col s12 m12">
                 <% if (details.length) { %>
                     <% details.forEach(function(c) { %>
+                        <div class="text">
+                            <p class="text">
+                                <%= c.icornName %>
+                            </p>
+                        </div>
                         <div class="col s4 m4">
                             <div class="card">
                                 <a href="/details/<%= c._id %>">
                                     <div class="card-image">
                                         <img class="detail-image" src="<%= c.imageUrl %>">
+
                                     </div>
                                 </a>
+
                                 <div class="card-action">
                                     <div class="row content-box">
-                                        <p class="detail-title">
+                                        <p class="text">
                                             <%= c.name %>
+                                                <%= c.icornName %>
                                         </p>
+
                                         <% if(user) { %>
-                                            <form action="/details/<%= c._id %>?_method=DELETE" class="delte-form"
-                                                method="POST">
-                                                <button type="submit" class="waves-effect black btn-small delete-btn"><i
-                                                        class="small material-icons white-text">delete_outline</i></button>
-                                            </form>
+
+                                            <a href="/details/<%= c._id %>/edit"
+                                                class="waves-effect black btn-small edit-btn"><i
+                                                    class="small material-icons white-text">edit_outline</i></a>
+
                                             <% } %>
+
+                                                <% if(user) { %>
+                                                    <form action="/details/<%= c._id %>?_method=DELETE"
+                                                        class="delete-form" method="POST">
+                                                        <button type="submit"
+                                                            class="waves-effect black btn-small delete-btn"><i
+                                                                class="small material-icons white-text">delete_outline</i></button>
+                                                    </form>
+                                                    <% } %>
                                     </div>
                                 </div>
                             </div>
