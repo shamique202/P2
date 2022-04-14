@@ -39,7 +39,7 @@ footer {
 
 a {
   color: #00b7ff;
-  /* width: 100%; */
+  width: 100%;
 }
 
 .detail-image {
@@ -234,6 +234,9 @@ label {
 .edit-btn {
   float: right;
   margin-right: 1.5em;
+  justify-content: center;
+  width: 40px;
+  align-items: center;
 }
 
 .edit-input {
@@ -262,9 +265,4 @@ label {
 .index-content {
   margin-top: 3.5em;
   text-align: center;
-}
-
-.row.content-box {
-  display: flex;
-  flex-direction: row;
 }
