@@ -8,7 +8,7 @@ router.get('/', function (req, res, next) {
   // creating a root route  
   // This could be a landing page, or just redirect to your main resource page which you'll have an a tag that makes 
   // a request to `/auth/google` route below
-  res.render('index', { title: 'Interior Designs by Shamique Etienne (WFH Edition)' })
+  res.render('index', { title: 'Home & Decor - Office edition' })
 });
 
 // logins
