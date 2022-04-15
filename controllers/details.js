@@ -34,11 +34,6 @@ function create(req, res) {
         if (err) return res.render(`details/${details_.id}`, { details, title: " Create" });
         res.redirect('details/new');
     })
-    // req.body.user = req.user._id
-    // let details = new Details(req.body);
-    // details.save(function (err) {
-    //     if (err) return res.render('details');
-    //     res.redirect('/details');
 };
 
 function deleteDetail(req, res) {
