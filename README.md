@@ -18,7 +18,7 @@ My interior design project is a full-stack CRUD application based on designing a
 - Materialize CSS
 
 ## Getting Started: 
-[Heroku](https://shamiquesinterior.herokuapp.com/)
+[Interior Design by Shamique](https://shamiquesinterior.herokuapp.com/)
 
 [Trello](https://trello.com/b/knucUAMH/project-two)
 
