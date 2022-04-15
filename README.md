@@ -10,18 +10,24 @@ My interior design project is a full-stack CRUD application based on designing a
 
 
 ## Technologies Used: 
-- NodeJS
+- Node.js
 - Express
 - MongoDB
 - Google OAuth Authentication
-- Boostrap 
+- Bootstrap 
 - Materialize CSS
 
 ## Getting Started: 
-trello link: https://trello.com/b/knucUAMH/project-two 
+[Heroku](https://shamiquesinterior.herokuapp.com/)
+
+[Trello](https://trello.com/b/knucUAMH/project-two)
+
+[Wireframe](https://whimsical.com/project-two-J8APrixYytVBQPUKyRJRJU)
+
 
 ## Next Steps: 
-- Add like buttons
-- Add comment section
-- Add more features
+- As a user, I want to like other's photos
+- As a user, I want to comments on other's photos
+- As a user, I want to post videos
+
 
