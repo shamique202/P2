@@ -7,6 +7,8 @@ My interior design project is a full-stack CRUD application based on designing a
 ![home](./public/images/homepage.png)
 ![aboutme](./public/images/abouts.png)
 ![details](./public/images/details.jpg)
+![pic](./public/images/glamshot.png)
+
 
 
 ## Technologies Used: 
