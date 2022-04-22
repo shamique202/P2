@@ -15,8 +15,7 @@ My interior design project is a full-stack CRUD application based on designing a
 - Node.js
 - Express
 - MongoDB
-- Google OAuth Authentication
-- Bootstrap 
+- Google OAuth Authentication 
 - Materialize CSS
 
 ## Getting Started: 
